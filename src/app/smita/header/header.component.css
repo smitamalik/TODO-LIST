@@ -21,8 +21,22 @@
   .select-button {
     flex: 1;
     text-align: right;
-    padding-left: 20px; /* Add spacing between the button and dropdown */
+    padding-left: 20px; 
   }
   
+.task-card{
+   
+    align-items: center;
+    padding: 20px; 
+    background-color: #f0f0f0; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+.both-buttons{
+  float:right;
+}
+.icon {
+  margin-left: 5px; 
+}
 
-  
+

@@ -3,31 +3,17 @@
     <h1>TODO LIST</h1>
   </div>
 
-  <!-- <div class="button-group">
-    <button mat-raised-button id="addTask" class="add-button">Add Task</button>
-
-    <mat-form-field class="right-button">
-      <mat-label>All</mat-label>
-      <mat-select>
-        <mat-option value="option1">All</mat-option>
-        <mat-option value="option2">Incomplete</mat-option>
-        <mat-option value="option3">Complete</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="task-list" id="taskList"></div>
-</div> -->
   <div class="task-controls">
     <div class="add-button">
-      <button mat-raised-button color="primary" id="addTask" class="add-button">
+      <button mat-raised-button color="primary" id="addTask" class="add-button" (click)="openDialog()">
         Add Task
       </button>
     </div>
 
     <div class="select-button">
       <mat-form-field>
-        <mat-label>All</mat-label>
-        <mat-select>
+        <mat-label>Select</mat-label>
+        <mat-select (selectionChange)="onFilterChange($event.value)">
           <mat-option value="option1">All</mat-option>
           <mat-option value="option2">Incomplete</mat-option>
           <mat-option value="option3">Complete</mat-option>
@@ -35,4 +21,22 @@
       </mat-form-field>
     </div>
   </div>
+</div>
+
+<div *ngFor="let item of filteredTodo" class="task-card">
+  <mat-card>
+    <mat-card-content>
+      <mat-checkbox [checked]="item.status == 'Complete'" (change)="onCheckChange(item)"></mat-checkbox>
+      {{ item.title }}
+
+      <div class=" both-buttons">
+        <button class="icon" mat-raised-button (click)="onDelete(item.id)" color="primary">
+          <mat-icon class="mat-icon">delete</mat-icon>
+        </button>
+        <button class="icon" mat-raised-button (click)="openDialog(item)" color="primary">
+          <mat-icon class="mat_icon">edit</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
