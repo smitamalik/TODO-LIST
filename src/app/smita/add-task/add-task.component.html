@@ -13,7 +13,7 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="taskForm.value">
+    <button mat-button [mat-dialog-close]="taskForm.value" (click)="onSubmit()">
       {{ data.id ? 'Update' : 'Add' }}
     </button>
     <button mat-button (click)="onCancelClick()">Cancel</button>

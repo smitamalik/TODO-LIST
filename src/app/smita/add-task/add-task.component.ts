@@ -26,4 +26,9 @@ export class AddTaskComponent {
   onCancelClick() {
     this.dialogRef.close();
   }
+
+  onSubmit() {
+    const formData = this.taskForm.value;
+    console.log('Form Data:', formData);
+  }
 }
