@@ -30,4 +30,4 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports: [PageComponent, HeaderComponent],
 })
-export class SmitaModule {}
+export class TodoModule {}
